@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "esnext",                                  
+        "module": "CommonJS",                                
+        "rootDir": "./src",                                  
+        "declaration": true,                                 
+        "outDir": "./dist",                                  
+        "esModuleInterop": true,                             
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,         
+        "strict": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true               
+    }
+}

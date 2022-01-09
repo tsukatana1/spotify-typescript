@@ -1,0 +1,6 @@
+src/info.json
+src/utils.ts
+node_modules/
+package-lock.json
+dist/
+.vscode/*
