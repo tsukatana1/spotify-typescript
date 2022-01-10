@@ -45,4 +45,4 @@ export class albumMethods {
         
         return fetchRes;
     }
-}
+} //
