@@ -1,7 +1,7 @@
 import fetch from "petitio";
 import { albumMethods } from "./albumReq";
 import { TokenEndpoint, SpotifyOpts } from "./interfaces";
-import { _ } from './utils';
+import { links } from './utils';
 
 
 /**
@@ -22,7 +22,7 @@ export class SpotifyRequester {
     }
     
     static async getOauthToken(clientID: string, clientSecret: string): Promise<TokenEndpoint> {
-        const fetchReq = await fetch(_.getOauthURL(), 'POST').header("Authorization", "Basic " + Buffer.from(clientID + ':' + clientSecret).toString('base64')).body({ grant_type: 'client_credentials' }, 'form').timeout(3000).send();
+        const fetchReq = await fetch(links.getOauthURL(), 'POST').header("Authorization", "Basic " + Buffer.from(clientID + ':' + clientSecret).toString('base64')).body({ grant_type: 'client_credentials' }, 'form').timeout(3000).send();
 
         if(fetchReq.statusCode !== 200) {
             throw new Error("Invalid client credentials.");

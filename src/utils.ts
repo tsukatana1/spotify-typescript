@@ -1,4 +1,4 @@
-export const _ = {
+export const links = {
     getAlbumURL: (id: string) => `https://api.spotify.com/v1/albums/${id}`,
     
     getMultiAlbums: (id: string) => `https://api.spotify.com/v1/albums?ids=${id}`,
