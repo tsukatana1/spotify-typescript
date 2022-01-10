@@ -10,7 +10,7 @@ export class albumMethods {
     }
 
     async fetchByID(id: string): Promise<GetAlbumResp> {
-        const fetchReq = await fetch(_.getAlbumURL(id)).header("Authorization", "Bearer " + this.accessToken).header("Content-Type", "application/json").send();
+        const fetchReq = await fetch(album.getAlbumURL(id)).header("Authorization", "Bearer " + this.accessToken).header("Content-Type", "application/json").send();
         const fetchRes = fetchReq.json();
         
         if(fetchReq.statusCode !== 200) {
@@ -23,7 +23,7 @@ export class albumMethods {
 
     async fetchSeveral(ids: string[]): Promise<GetAlbumResp[]> {
         const id = ids.join(',');
-        const fetchReq = await fetch(_.getMultiAlbums(id)).header("Authorization", "Bearer " + this.accessToken).header("Content-Type", "application/json").send();
+        const fetchReq = await fetch(album.getMultiAlbums(id)).header("Authorization", "Bearer " + this.accessToken).header("Content-Type", "application/json").send();
         const fetchRes = fetchReq.json();
 
         if(fetchReq.statusCode !== 200) {
@@ -35,7 +35,7 @@ export class albumMethods {
     }
 
     async fetchTracks(id: string): Promise<any> {
-        const fetchReq = await fetch(_.getAlbumTracksURL(id)).header("Authorization", "Bearer " + this.accessToken).header("Content-Type", "application/json").send();
+        const fetchReq = await fetch(album.getAlbumTracksURL(id)).header("Authorization", "Bearer " + this.accessToken).header("Content-Type", "application/json").send();
         const fetchRes = fetchReq.json();
 
         if(fetchReq.statusCode !== 200) {
