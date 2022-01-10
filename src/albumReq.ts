@@ -1,5 +1,5 @@
 import { GetAlbumResp, SpotifyError } from "./interfaces";
-import { _ } from './utils';
+import { album } from './utils';
 import fetch from 'petitio';
 
 export class albumMethods {
